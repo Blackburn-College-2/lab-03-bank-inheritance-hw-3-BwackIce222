@@ -15,9 +15,13 @@ public class Runner {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Account account = new Account(0.00);
-        account.withdraw(2.53);
-        account.deposit(4.00);
+        Currency currency = new Currency("USD","$");
+        Money money = new Money(currency,4);
+        Money money2 = new Money(currency,-2);
+        Account account = new Account(money);
+        System.out.println(account.withdraw(money));
+        System.out.println(account.deposit(money));
+      
         System.out.printf("%.2f \n",account.getBalance());
       
     

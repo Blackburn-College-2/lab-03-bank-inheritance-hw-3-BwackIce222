@@ -17,15 +17,15 @@ public class Money {
         this.amount = amount;
         
     }
-   // public String getAmountString(){
-        
-   // }
-  //  public Money add(Money input){
-        
-   // }
-   // public Money subtract(Money input){
-        
-    //}
+    public String getAmountString(){
+     return "hi";   
+    }
+    public Money add(Money input){
+     return input;
+    }
+    public Money subtract(Money input){
+        return input;
+    }
    // @Override
    // public String toString(){
         
