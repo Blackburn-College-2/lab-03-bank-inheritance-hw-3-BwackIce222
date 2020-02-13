@@ -12,8 +12,8 @@ import java.util.ArrayList;
  * @author montreal.thomas
  */
 //Creates an Account. Balance, transactions and history are ept track of.
-public class Account {
-    private Money balance;
+public abstract class Account {
+    protected Money balance;
     public ArrayList<Money> history = new ArrayList<Money>();
    // account constructor
     public Account(Money balance){

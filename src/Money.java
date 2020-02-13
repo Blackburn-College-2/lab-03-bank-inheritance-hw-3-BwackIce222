@@ -48,4 +48,9 @@ public class Money {
     public Currency getCurrency() {
         return this.currency;
     }
+    public void multiply(long x){
+       long product = this.amount*x;
+    }
+    
 }
+
