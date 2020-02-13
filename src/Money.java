@@ -8,26 +8,44 @@
  *
  * @author montreal.thomas
  */
+//Creates a Money object and stores the curency and ammount
 public class Money {
+
     private Currency currency;
     private long amount;
-    
-    public Money(Currency currency,long amount){
+//Money constructor
+    public Money(Currency currency, long amount) {
         this.currency = currency;
         this.amount = amount;
-        
+
     }
-    public String getAmountString(){
-     return "hi";   
+//Prints out the current balance in the account
+    public String getAmountString() {
+        return "Current balance is: " + this.amount;
     }
-    public Money add(Money input){
-     return input;
+//adds money to the account
+    public Money add(Money input) {
+        this.amount += input.getAmount();
+        System.out.println("A total of: " + input.getAmount() + input.getCurrency().toString() + " has been deposited.");
+        return this;
     }
-    public Money subtract(Money input){
-        return input;
+//removes money from the account
+    public Money subtract(Money input) {
+        this.amount += input.getAmount();
+        System.out.println("A total of: " + input.getAmount() + input.getCurrency().toString() + " has been withdrawn.");
+        return this;
     }
-   // @Override
-   // public String toString(){
-        
-   // }
+//prints out the aamount and currency
+    @Override
+    public String toString() {
+        return ""+this.getAmount() + this.currency.toString();
+    }
+//gets the amount of money
+    public long getAmount() {
+        return this.amount;
+    }
+//gets the currency of money
+    public Currency getCurrency() {
+        return this.currency;
+    }
 }

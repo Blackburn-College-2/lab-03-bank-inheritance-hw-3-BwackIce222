@@ -11,32 +11,40 @@ import java.util.ArrayList;
  *
  * @author montreal.thomas
  */
-
+//Creates an Account. Balance, transactions and history are ept track of.
 public class Account {
     private Money balance;
     public ArrayList<Money> history = new ArrayList<Money>();
-    
+   // account constructor
     public Account(Money balance){
        this.balance = balance;
         
    }
-    public Money withdraw(Money m){
-        this.balance.subtract(m);
-        this.balance.add(m);
-        
-        return this.balance;
+    //makes a withdrawl to account
+    public void withdraw(Money m){
+    this.balance.subtract(m);
+    history.add(new Money(m.getCurrency(),-m.getAmount()));
     }
-    public Money deposit(Money m){
-        history.add(0, m);
-        return this.balance;
+    //makes a deposit to account
+    public void deposit(Money m){
+     this.balance.add(m);
+    history.add(new Money(m.getCurrency(),m.getAmount()));
     }
+    //retrieves the current balance
     public Money getBalance(){
         return this.balance;
         
     }
+    //Preints out the balance
     @Override
     public String toString(){
-        return "Your current balance is: "+getBalance();
+        return "Your current balance is: "+getBalance().toString();
+    }
+    //prints out the "banking statement"/account history
+    public void printHistory(Account a){
+        for(int j = 0; j< history.size(); j++){
+            System.out.println(history.get(j));
+        }
     }
 
 }
