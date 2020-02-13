@@ -41,7 +41,7 @@ public class Account {
         return "Your current balance is: "+getBalance().toString();
     }
     //prints out the "banking statement"/account history
-    public void printHistory(Account a){
+    public void printHistory(){
         for(int j = 0; j< history.size(); j++){
             System.out.println(history.get(j));
         }

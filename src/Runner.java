@@ -36,7 +36,7 @@ public class Runner {
         
         System.out.println(money.toString());
         System.out.println("");
-        account.printHistory(account);
+        account.printHistory();
         System.out.println("");
         System.out.println( money.getAmountString());
         
